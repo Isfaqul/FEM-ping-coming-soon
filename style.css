@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap");
+
+:root {
+  --white: white;
+  --blue: hsl(223, 87%, 63%);
+  --pale-blue: hsl(223, 100%, 88%);
+  --light-red: hsl(354, 100%, 66%);
+  --gray: hsl(0, 0%, 59%);
+  --very-dark-blue: hsl(209, 33%, 12%);
+
+  --f: "Libre Franklin", sans-serif;
+  --f-700: 700;
+  --f-600: 600;
+  --f-300: 300;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.hero-img {
+  max-width: min(100%, 40em);
+  width: 100%;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+html {
+  font-family: var(--f);
+}
+
+body {
+  padding: 2em 1.75em;
+  min-height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  display: block;
+  max-width: 3.375em;
+}
+
+header {
+  margin-bottom: 2.5em;
+}
+
+.hero-text {
+  font-size: 1.375rem;
+  font-weight: var(--f-300);
+  color: var(--gray);
+  margin-bottom: 0.773em;
+}
+
+.hero-text span {
+  font-weight: var(--f-700);
+  color: var(--very-dark-blue);
+}
+
+form {
+  margin: 2em auto 4.25em auto;
+  padding-inline: 1.188em;
+}
+
+input,
+.btn {
+  border-radius: 3em;
+  display: block;
+  width: 100%;
+  padding: 0.917em 2.583em;
+  font-family: var(--f);
+}
+
+input {
+  font-size: 0.75rem;
+  margin-bottom: 0.833em;
+  border: 1px solid var(--pale-blue);
+}
+
+input:not(.showError):hover,
+input:focus {
+  border: 1px solid var(--blue);
+  outline: none;
+}
+
+.showError {
+  border: 1px solid var(--light-red);
+}
+
+.error-message {
+  display: none;
+  font-style: italic;
+  color: var(--light-red);
+  font-size: 0.625rem;
+  letter-spacing: 0.09em;
+  margin: 0.6em auto 2.4em auto;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: var(--blue);
+  border: none;
+  color: var(--white);
+  font-weight: var(--f-600);
+  box-shadow: 0px 6px 11px rgba(76, 123, 243, 0.3);
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: hsl(223, 96%, 67%);
+}
+
+.btn:active {
+  background-color: hsl(223, 84%, 59%);
+}
+
+footer {
+  margin-top: 7.5em;
+}
+
+.social-icon-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.419em;
+  font-size: 1.2rem;
+  margin-bottom: 0.871em;
+}
+
+.social-icon {
+  border: 1px solid var(--pale-blue);
+  border-radius: 50%;
+  padding: 0.3em;
+  cursor: pointer;
+  fill: var(--blue);
+}
+
+.social-icon:hover,
+.social-icon:focus {
+  border: 1px solid var(--pale-blue);
+  background-color: var(--blue);
+  border-radius: 50%;
+  padding: 0.3em;
+  border: 1px solid var(--blue);
+  fill: var(--white);
+}
+
+.social-icon:active {
+  fill: var(--white);
+  background-color: hsl(223, 84%, 59%);
+}
+
+.copyright {
+  color: var(--gray);
+  font-size: 0.625rem;
+}
+
+@media (min-width: 650px) {
+  header,
+  main,
+  footer {
+    max-width: 40em;
+  }
+
+  form {
+    display: flex;
+    gap: 1em;
+    padding-inline: 0;
+  }
+
+  input,
+  .btn {
+    font-size: 1.25rem;
+    padding: 0.8em 1.5em;
+  }
+
+  input {
+    margin-bottom: 0;
+  }
+
+  form {
+    position: relative;
+  }
+
+  input::placeholder {
+    font-size: 1rem;
+  }
+
+  .error-message {
+    font-size: 0.75em;
+    position: absolute;
+    bottom: -50px;
+    left: 1.5em;
+  }
+
+  .btn {
+    max-width: 10em;
+  }
+
+  .logo {
+    max-width: 5.375em;
+  }
+
+  .hero-text {
+    font-size: 3rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.25em;
+  }
+
+  footer {
+    margin-top: 4.563em;
+  }
+
+  .copyright {
+    font-size: 0.75rem;
+  }
+}

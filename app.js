@@ -5,19 +5,32 @@ const errorMessageEl = document.querySelector("[data-error-message]");
 formEl.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const PATTERN = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
-  if (!PATTERN.test(emailInput.value)) {
-    errorMessageEl.style.display = "block";
-    emailInput.classList.add("showError");
-    emailInput.value = "example@email.com";
-  } else {
-    emailInput.classList.remove("showError");
+  if (!isEmail(emailInput)) {
+    showError();
   }
 
+  removeError();
+});
+
+function isEmail(input) {
+  const PATTERN = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+  return PATTERN.test(input.value);
+}
+
+function removeError() {
   emailInput.addEventListener("click", () => {
     emailInput.classList.remove("showError");
     errorMessageEl.style.display = "none";
-    emailInput.value = "";
+
+    if (!isEmail(emailInput) || emailInput.value === "example@email.com") {
+      emailInput.value = "";
+    }
   });
-});
+}
+
+function showError() {
+  errorMessageEl.style.display = "block";
+  emailInput.classList.add("showError");
+  emailInput.value = "example@email.com";
+}
